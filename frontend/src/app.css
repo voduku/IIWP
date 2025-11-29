@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+/*@plugin '@tailwindcss/forms';*/
+/*@plugin '@tailwindcss/typography';*/
+
+:root {
+	--background: 255 255 255;
+	--foreground: 17 17 17;
+
+	--card: 255 255 255;
+	--card-foreground: 17 17 17;
+
+	--border: 0 0 0;
+	--input: 255 255 255;
+
+	--primary: 0 70 150;
+	--primary-foreground: 255 255 255;
+
+	--muted: 240 240 240;
+	--muted-foreground: 100 100 100;
+
+	--radius: 0.5rem;
+
+	/* GLASS VARIABLES */
+	--glass-bg: 255 255 255;
+	--glass-bg-alpha: 0.12;
+
+	--glass-bg-heavy: 255 255 255;
+	--glass-bg-heavy-alpha: 0.25;
+
+	--glass-border: 255 255 255;
+	--glass-border-alpha: 0.25;
+
+	--glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+
+	/* CARD VARIABLES */
+	--card-bg: 255 255 255;
+	--card-text: 17 17 17;
+
+	/* ACCENT VARIABLES */
+	--accent: 0 70 150;
+	--accent-light: 0 70 150;
+	--accent-light-alpha: 0.18;
+}
+
+@layer components {
+	.glass {
+		background: rgba(var(--glass-bg) / var(--glass-bg-alpha));
+		backdrop-filter: blur(24px);
+		border: 1px solid rgba(var(--glass-border) / var(--glass-border-alpha));
+		box-shadow: var(--glass-shadow);
+		border-radius: 1rem;
+	}
+
+	.glass-heavy {
+		background: rgba(var(--glass-bg-heavy) / var(--glass-bg-heavy-alpha));
+		backdrop-filter: blur(28px);
+		border: 1px solid rgba(var(--glass-border) / var(--glass-border-alpha));
+		box-shadow: var(--glass-shadow);
+		border-radius: 1.25rem;
+	}
+
+	.card-white {
+		background: rgb(var(--card-bg));
+		color: rgb(var(--card-text));
+		border-radius: 1.5rem;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+		padding: 1.5rem;
+	}
+
+	.accent-btn {
+		background: rgba(var(--accent-light) / var(--accent-light-alpha));
+		color: white;
+		backdrop-filter: blur(24px);
+		border-radius: 1rem;
+		padding: 0.75rem 1.25rem;
+		font-weight: 600;
+		transition: background 0.2s;
+	}
+
+	.accent-btn:hover {
+		background: rgb(var(--accent));
+	}
+}
